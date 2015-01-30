@@ -2,7 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="portlet" uri="http://java.sun.com/portlet" %>
 
-<!DOCTYPE html>
 
 <portlet:defineObjects/>
 <%

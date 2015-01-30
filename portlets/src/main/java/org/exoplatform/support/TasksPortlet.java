@@ -22,8 +22,6 @@ public class TasksPortlet extends GenericPortlet
     private static final String DELETE_VIEW = "/delete.jsp";
     private static final String CREATE_VIEW = "/create.jsp";
     private TaskService ts;
-    private enum Page {CREATE, DELETE, EDIT, VIEW}
-    private Page currPage;
     private String newId;
 
     private PortletRequestDispatcher initialView;
@@ -34,15 +32,15 @@ public class TasksPortlet extends GenericPortlet
     public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
         if ("true".equals(request.getParameter("redirectToCreate"))) {
             createView.include(request, response);
-            currPage = Page.CREATE;
         }
         else if ("true".equals(request.getParameter("redirectToEdit"))) {
-            editView.include(request, response);
-            currPage = Page.EDIT;
             newId = request.getParameter("newTaskId");
+
             request.setAttribute("oldTitle", request.getParameter("oldTitle"));
             request.setAttribute("oldDescription", request.getParameter("oldDescription"));
             request.setAttribute("oldDate", request.getParameter("oldDate"));
+
+            editView.include(request, response);
         }
         else {
             doView(request, response);
@@ -71,6 +69,7 @@ public class TasksPortlet extends GenericPortlet
             String newTitle = request.getParameter("newTaskTitle");
             String newDescription = request.getParameter("newTaskDescription");
             String newDate = request.getParameter("newTaskDate");
+
 
             ts.editTask(newId,newTitle,newDescription,newDate);
         }

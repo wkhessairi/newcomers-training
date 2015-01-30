@@ -1,0 +1,24 @@
+<nodeTypes
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:exo="http://www.exoplatform.com/jcr/exo/1.0">
+
+    <nodeType name="exo:Task" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+        <propertyDefinitions>
+            <propertyDefinition name="exo:id" requiredType="String" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+                <valueConstraints />
+            </propertyDefinition>
+            <propertyDefinition name="exo:title" requiredType="String" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+                <valueConstraints />
+            </propertyDefinition>
+            <propertyDefinition name="exo:description" requiredType="String" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+                <valueConstraints />
+            </propertyDefinition>
+            <propertyDefinition name="exo:due" requiredType="Date" autoCreated="false" mandatory="false" onParentVersion="COPY" protected="false" multiple="false">
+                <valueConstraints />
+            </propertyDefinition>
+        </propertyDefinitions>
+    </nodeType>
+
+</nodeTypes>

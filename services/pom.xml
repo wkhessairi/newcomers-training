@@ -11,6 +11,30 @@
   <artifactId>services</artifactId>
   <packaging>jar</packaging>
   <name>Core Container Services</name>
+  <version>1.0</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>picocontainer</groupId>
+      <artifactId>picocontainer</artifactId>
+      <version>1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.jcr</groupId>
+      <artifactId>jcr</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.exoplatform.jcr</groupId>
+      <artifactId>exo.jcr.component.core</artifactId>
+      <version>${org.exoplatform.jcr.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.gatein.portal</groupId>
+      <artifactId>exo.portal.component.portal</artifactId>
+      <version>${org.gatein.portal.version}</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <finalName>${project.parent.artifactId}-${project.artifactId}</finalName>

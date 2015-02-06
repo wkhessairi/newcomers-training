@@ -8,9 +8,22 @@
         <key>org.exoplatform.support.TaskService</key>
         <type>org.exoplatform.support.TaskServiceImpl</type>
     </component>
+
+    <component>
+        <type>org.exoplatform.services.scheduler.impl.QuartzSheduler</type>
+    </component>
+
+    <component>
+        <type>org.exoplatform.services.scheduler.QueueTasks</type>
+    </component>
+
+    <component>
+        <key>org.exoplatform.services.scheduler.JobSchedulerService</key>
+        <type>org.exoplatform.services.scheduler.impl.JobSchedulerServiceImpl</type>
+    </component>
+
     <external-component-plugins>
         <target-component>org.exoplatform.services.jcr.RepositoryService</target-component>
-
         <component-plugin>
             <name>add.nodeType</name>
             <set-method>addPlugin</set-method>
@@ -22,6 +35,45 @@
                     <value>jar:/conf/portal/node-type.xml</value>
                 </values-param>
             </init-params>
+        </component-plugin>
+    </external-component-plugins>
+
+
+
+    <external-component-plugins>
+        <target-component>org.exoplatform.services.scheduler.JobSchedulerService</target-component>
+
+        <component-plugin>
+
+            <name>CronJob Plugin</name>
+
+            <set-method>addCronJob</set-method>
+
+            <type>org.exoplatform.services.scheduler.CronJob</type>
+
+            <description>cron job configuration</description>
+
+            <init-params>
+
+                <properties-param>
+
+                    <name>cronjob.info</name>
+
+                    <description>dumb job executed by cron expression</description>
+
+                    <property name="jobName" value="NotifyJob"/>
+
+                    <property name="groupName" value="NotifyJobGroup"/>
+
+                    <property name="job" value="org.exoplatform.support.NotifyJob"/>
+
+                    <!-- The job will be performed at 5:05 pm every day -->
+                    <property name="expression" value="0 38 17 * * ?"/>
+
+                </properties-param>
+
+            </init-params>
+
         </component-plugin>
     </external-component-plugins>
 

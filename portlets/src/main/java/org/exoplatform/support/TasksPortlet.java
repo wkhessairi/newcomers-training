@@ -19,14 +19,12 @@ public class TasksPortlet extends GenericPortlet
 {
     private static final String INITIAL_VIEW = "/view.jsp";
     private static final String EDIT_VIEW = "/edit.jsp";
-    private static final String DELETE_VIEW = "/delete.jsp";
     private static final String CREATE_VIEW = "/create.jsp";
     private TaskService ts;
     private String newId;
 
     private PortletRequestDispatcher initialView;
     private PortletRequestDispatcher editView;
-    private PortletRequestDispatcher deleteView;
     private PortletRequestDispatcher createView;
 
     public void render(RenderRequest request, RenderResponse response) throws PortletException, IOException {
@@ -78,9 +76,11 @@ public class TasksPortlet extends GenericPortlet
     public void doView(RenderRequest request, RenderResponse response)
             throws PortletException, IOException
     {
-        List<Node> nodes = ts.getAllTasks();
-        request.setAttribute("nodes", nodes);
-        initialView.include(request, response);
+        if (ts.getAllTasks() != null) {
+            List<Node> nodes = ts.getAllTasks();
+            request.setAttribute("nodes", nodes);
+            initialView.include(request, response);
+        }
     }
 
     public void init(PortletConfig config) throws PortletException
@@ -88,7 +88,6 @@ public class TasksPortlet extends GenericPortlet
         super.init(config);
         initialView = config.getPortletContext().getRequestDispatcher(INITIAL_VIEW);
         createView = config.getPortletContext().getRequestDispatcher(CREATE_VIEW);
-        deleteView = config.getPortletContext().getRequestDispatcher(DELETE_VIEW);
         editView = config.getPortletContext().getRequestDispatcher(EDIT_VIEW);
 
         ExoContainer container = ExoContainerContext.getCurrentContainer();
@@ -99,7 +98,6 @@ public class TasksPortlet extends GenericPortlet
     {
         initialView = null;
         createView = null;
-        deleteView = null;
         editView = null;
         super.destroy();
     }

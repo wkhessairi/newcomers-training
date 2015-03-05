@@ -9,5 +9,6 @@ public interface TaskService {
     public abstract void editTask(String taskId,String title,String description,String due);
     public abstract void deleteTask(String eventID);
     public abstract List<Node> getAllTasks();
+    public abstract List<String> getTasksByUser(String userId);
 
 }

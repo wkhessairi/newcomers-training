@@ -1,0 +1,21 @@
+<script type="text/javascript" charset="utf-8" src="/newcomers-training-juzu/js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="/newcomers-training-juzu/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/newcomers-training-juzu/js/juzu-ajax-min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/newcomers-training-juzu/js/taskmanagement.js"></script>
+
+
+<div  class="uiBox uiTaskManagement" id="content">
+    <h6 class="title center">Select a user </h6>
+    <form class="form-horizontal" id="form-horizontal">
+        <div class="form-group">
+            <input type="text" class="form-control" id="inputEmail5" placeholder="Project-name">
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="getlist btn-default" >Tasks</button>
+        </div>
+    </form>
+</div>
+
+
+

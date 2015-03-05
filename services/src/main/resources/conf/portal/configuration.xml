@@ -22,6 +22,10 @@
         <type>org.exoplatform.services.scheduler.impl.JobSchedulerServiceImpl</type>
     </component>
 
+    <component>
+        <type>org.exoplatform.support.RestUserService</type>
+    </component>
+
     <external-component-plugins>
         <target-component>org.exoplatform.services.jcr.RepositoryService</target-component>
         <component-plugin>
@@ -68,7 +72,7 @@
                     <property name="job" value="org.exoplatform.support.NotifyJob"/>
 
                     <!-- The job will be performed at 5:05 pm every day -->
-                    <property name="expression" value="0 38 17 * * ?"/>
+                    <property name="expression" value="0 39 12 * * ?"/>
 
                 </properties-param>
 

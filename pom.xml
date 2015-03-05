@@ -17,6 +17,7 @@
     <module>services</module>
     <module>activator</module>
     <module>extension</module>
+    <module>juzu</module>
   </modules>
 
   <name>Support Newcomers Training Project</name>

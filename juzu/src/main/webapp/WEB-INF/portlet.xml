@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             version="2.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+   http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+   <portlet>
+       <description>JuzuPortlet</description>
+       <portlet-name>juzu-training</portlet-name>
+       <display-name>Newcomers Juzu Portlet</display-name>
+       <portlet-class>org.exoplatform.support.TestPortlet</portlet-class>
+       <init-param>
+           <name>juzu.app_name</name>
+           <value>JuzuPortlet</value>
+       </init-param>
+     <init-param>
+       <name>juzu.run_mode</name>
+       <value>dev</value>
+     </init-param>
+     <init-param>
+       <name>juzu.inject</name>
+         <value>guice</value>
+
+       <!--value>spring</value-->
+       <!--
+       <value>spring</value>
+       -->
+     </init-param>
+     <supports>
+       <mime-type>text/html</mime-type>
+     </supports>
+     <portlet-info>
+         <title>Juzu Portlet</title>
+         <short-title>Juzu Portlet</short-title>
+         <keywords>juzu new comer</keywords>
+     </portlet-info>
+   </portlet>
+</portlet-app>

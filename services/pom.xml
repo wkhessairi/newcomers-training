@@ -34,6 +34,53 @@
       <artifactId>exo.portal.component.portal</artifactId>
       <version>${org.gatein.portal.version}</version>
     </dependency>
+    <dependency>
+
+      <groupId>org.exoplatform.ws</groupId>
+
+      <artifactId>exo.ws.rest.core</artifactId>
+
+      <version>2.3.7-GA</version>
+
+      <scope>provided</scope>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>org.exoplatform.core</groupId>
+
+      <artifactId>exo.core.component.organization.api</artifactId>
+
+      <version>2.6.0-GA</version>
+
+      <scope>provided</scope>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>javax.annotation</groupId>
+
+      <artifactId>jsr250-api</artifactId>
+
+      <version>1.0</version>
+
+      <scope>provided</scope>
+
+    </dependency>
+
+    <dependency>
+
+      <groupId>com.metaparadigm</groupId>
+
+      <artifactId>json-rpc</artifactId>
+
+      <version>1.0</version>
+
+      <scope>provided</scope>
+
+    </dependency>
   </dependencies>
 
   <build>

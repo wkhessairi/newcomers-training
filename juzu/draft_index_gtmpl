@@ -1,0 +1,5 @@
+<form action="@{get()}" method="post">
+<input type="text" name="selUser" value=""/>
+<input type="submit"/>
+</form>
+

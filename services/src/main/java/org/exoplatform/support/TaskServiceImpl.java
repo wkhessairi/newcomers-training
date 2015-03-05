@@ -121,6 +121,36 @@ public class TaskServiceImpl implements TaskService,Startable {
         return nodes;
     }
 
+    public List<String> getTasksByUser(String userId) {
+        ManageableRepository repository = null;
+        NodeIterator it = null;
+        List<String> res = new ArrayList<String>();
+
+        try {
+            repository = repositoryService.getDefaultRepository();
+
+            Session session = repository.getSystemSession("collaboration");
+
+            Node userNode = session.getRootNode().getNode(getRelPath(userId));
+
+            if (userNode.hasNode(TASKS_ROOT_NODE)) {
+                tasksNode = userNode.getNode(TASKS_ROOT_NODE);
+                if (tasksNode != null) {
+                    it = tasksNode.getNodes();
+
+                    while (it.hasNext()) {
+                        res.add(it.nextNode().getProperty("title").getString());
+                    }
+                }
+            }
+        } catch (RepositoryException e) {
+            e.printStackTrace();
+        } catch (RepositoryConfigurationException e) {
+            e.printStackTrace();
+        }
+        return res;
+    }
+
     @Override
     public void start() {
 

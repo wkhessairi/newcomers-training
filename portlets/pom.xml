@@ -36,6 +36,7 @@
 
   <build>
     <finalName>${project.parent.artifactId}-${project.artifactId}</finalName>
+
   </build>
 
 </project>
